@@ -1,0 +1,9 @@
+(Start of recording)
+
+"Hey everyone, welcome back to the channel! Today, we're going to write a Python function to calculate numbers in the famous Fibonacci sequence."
+
+(Press START hotkey)
+
+"Inside the function, we need to handle some edge cases..."
+
+(End of recording)

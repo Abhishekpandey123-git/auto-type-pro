@@ -1,0 +1,34 @@
+#<--PLAN-->
+# This plan will type the Fibonacci code.
+#
+# 1. AT_LINE: 1, CALL_BLOCK: "fib_func_start"
+# 2. AT_LINE: 10, CALL_BLOCK: "fib_func_end"
+# 3. AT_LINE: 17, CALL_BLOCK: "fib_example"
+#<--END-PLAN-->
+
+
+#<--BLOCK: fib_func_start-->
+def calculate_fibonacci(n):
+    """
+    Calculates the nth number in the Fibonacci sequence.
+    """
+    if n <= 0:
+        print("Input should be a positive integer")
+        return None
+    elif n == 1:
+        return 0
+    elif n == 2:
+        return 1
+
+#<--BLOCK: fib_func_end-->
+    else:
+        # We start with the first two numbers
+        a, b = 0, 1
+        for _ in range(2, n):
+            a, b = b, a + b
+        return b
+
+#<--BLOCK: fib_example-->
+# Example usage:
+result = calculate_fibonacci(10)
+print(f"The 10th Fibonacci number is: {result}")

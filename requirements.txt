@@ -1,0 +1,4 @@
+# To install these, run: pip install -r requirements.txt
+pyautogui
+pynput
+pygame
