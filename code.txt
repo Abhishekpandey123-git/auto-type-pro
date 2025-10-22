@@ -1,34 +1,56 @@
 #<--PLAN-->
-# This plan will type the Fibonacci code.
+# This plan includes subtitles and varying speeds.
 #
-# 1. AT_LINE: 1, CALL_BLOCK: "fib_func_start"
-# 2. AT_LINE: 10, CALL_BLOCK: "fib_func_end"
-# 3. AT_LINE: 17, CALL_BLOCK: "fib_example"
+# 1. AT_LINE: 1, CALL_BLOCK: "var_define"
+# 2. WAIT: 1.0
+# 3. AT_LINE: 3, CALL_BLOCK: "print_call"
+# 4. PAUSE_FOR_INPUT
+# 5. AT_LINE: 5, CALL_BLOCK: "fib_comment"
+# 6. AT_LINE: 6, CALL_BLOCK: "fib_func_start"
+# 7. AT_LINE: 15, CALL_BLOCK: "fib_func_end"
+# 8. AT_LINE: 22, CALL_BLOCK: "fib_example"
 #<--END-PLAN-->
 
 
+#<--BLOCK: var_define-->
+#<--SUBTITLE: First, let's define a simple variable.-->
+x = "Hello World!"
+
+#<--BLOCK: print_call-->
+#<--SUBTITLE: Now we'll print that variable to the console.-->
+print(x)
+
+#<--BLOCK: fib_comment-->
+#<--SUBTITLE: Let's write a more complex function, like Fibonacci. We'll start with a docstring.-->
+"""
+Calculates the nth number in the Fibonacci sequence.
+Handles base cases and iteratively calculates the result.
+"""
+
 #<--BLOCK: fib_func_start-->
+#<--SUBTITLE: Define the function signature and handle edge cases (n <= 0).-->
 def calculate_fibonacci(n):
-    """
-    Calculates the nth number in the Fibonacci sequence.
-    """
     if n <= 0:
         print("Input should be a positive integer")
         return None
+#<--SUBTITLE: Handle the first two Fibonacci numbers (n=1 and n=2).-->
     elif n == 1:
         return 0
     elif n == 2:
         return 1
 
 #<--BLOCK: fib_func_end-->
+#<--SUBTITLE: For n > 2, initialize variables and loop to calculate.-->
     else:
         # We start with the first two numbers
         a, b = 0, 1
         for _ in range(2, n):
             a, b = b, a + b
+#<--SUBTITLE: Return the final calculated number.-->
         return b
 
 #<--BLOCK: fib_example-->
+#<--SUBTITLE: Finally, let's test our function by calculating the 10th Fibonacci number.-->
 # Example usage:
 result = calculate_fibonacci(10)
 print(f"The 10th Fibonacci number is: {result}")
